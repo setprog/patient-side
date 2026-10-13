@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* CarePath patient app — shadcn/ui tokens (new-york), calm teal brand.
+   Extra tokens: success / warning / danger-soft for status, band for chart target ranges. */
+:root {
+  --radius: 0.85rem;
+  --background: #f3f7f7;
+  --foreground: #142a2d;
+  --card: #ffffff;
+  --card-foreground: #142a2d;
+  --popover: #ffffff;
+  --popover-foreground: #142a2d;
+  --primary: #0e7c6b;
+  --primary-foreground: #ffffff;
+  --secondary: #e3f1ee;
+  --secondary-foreground: #0b5f52;
+  --muted: #eaf0f0;
+  --muted-foreground: #586d70;
+  --accent: #dff1ec;
+  --accent-foreground: #0b5f52;
+  --destructive: #c2413a;
+  --success: #22804e;
+  --success-soft: #e1f3e7;
+  --warning: #9a6408;
+  --warning-soft: #fbf0d9;
+  --danger-soft: #f9e3e1;
+  --border: #dce6e6;
+  --input: #cfdcdc;
+  --ring: #0e7c6b;
+  --chart-1: #0e7c6b;
+  --chart-2: #3b6fb6;
+  --band: #e1f3e7;
+}
+
+.dark {
+  --background: #0e191a;
+  --foreground: #e6f0ef;
+  --card: #162426;
+  --card-foreground: #e6f0ef;
+  --popover: #1a2b2d;
+  --popover-foreground: #e6f0ef;
+  --primary: #3fb8a2;
+  --primary-foreground: #05211c;
+  --secondary: #1c3536;
+  --secondary-foreground: #bfe7de;
+  --muted: #1d2c2e;
+  --muted-foreground: #9ab0ae;
+  --accent: #17383a;
+  --accent-foreground: #bfe7de;
+  --destructive: #e8776c;
+  --success: #5cc88a;
+  --success-soft: #163525;
+  --warning: #e5b256;
+  --warning-soft: #3a2e14;
+  --danger-soft: #3e1f1c;
+  --border: #283a3c;
+  --input: #34494b;
+  --ring: #3fb8a2;
+  --chart-1: #3fb8a2;
+  --chart-2: #7fa8e8;
+  --band: #163525;
+}
+
+@theme inline {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger-soft: var(--danger-soft);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 16px;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading font-semibold;
+    text-wrap: balance;
+    line-height: 1.2;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
